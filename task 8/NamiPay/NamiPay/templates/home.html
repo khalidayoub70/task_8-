@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+     <link rel = "stylesheet" href="../static/myfirst.css">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <title>Work Submission Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<form>
+    <label for="fname">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+    
+    <label for="lname"></label><br>
+    
+  </form>
+<body>
+    
+   
+    <div class="form-container">
+        
+       <center><img src="../../Images/logo1.jpeg" alt="Logo" style="width:50%"></center>
+        
+        <h1>Welcome to intraprenuer.com</span></h1>
+        <h4>Work Submission Form</h4>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <label for="intern">Intern:</label>
+            <select id="intern" name="intern">
+                {% for intern in interns %}
+                    <option value="{{ intern.id }}">{{ intern.name }}</option>
+                {% endfor %}
+            </select>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+            
+            <label for="worked_on">Worked On:</label>
+            <textarea id="worked_on" name="worked_on" rows="4" cols="50"></textarea>
+            
+            <label for="screenshot">Screenshot:</label>
+            <input type="file" id="screenshot" name="screenshot">
+            
+            <input type="submit" value="Submit">
+        </form>
+
+    </div>
+
+   
+    <form>
+        <body>
+            <div class="form-container bg-dark">
+        <center><font size="+2"><label for="fname">Instructions</label><br></font></center>
+        <label for="fname">Task 1: Fill form & Click on Submit to check the &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; form is submitted</label><br>
+        <label for="fname">Tast 2: go to url "/authorized" without login in"</label><br>
+        <label for="fname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and sign-up"/admin url and after login &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to  check again restricted page</label><br>
+        <label for="fname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Or to see restricted page "/account" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sign up & login and see restricted page</label><br></font></center>
+        
+        <label for="fname">Task 3: delete myfirst.css and logo.jpeg in stitic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and Images folder to see effect of css </label><br>
+        <label for="fname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; on page</label><br>
+
+        <label for="fname">Task 4: Go to Urls "/dummy" right click on &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; page inspect to see the effend of &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; responses through boot strap 5</label><br>
+        <label for=" on page</label><br>
+
+
+            </body>
+        </form>
+    
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    </body>
+</html>
